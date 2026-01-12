@@ -1,25 +1,17 @@
-/* =========================
-   Reset & Variables
-========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@use "sass:map";
+@use "sass:list";
 
-:root {
-  --brand: #3c90ff;
-  --brand-dark: #1f6fe0;
-  --bg: #f6f8fc;
-  --surface: #ffffff;
-  --text: #0f172a;
-  --muted: #6b7280;
-  --dark: #0b0b0b;
-  --radius: 14px;
-  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
+$color-fondos: #7CB9E8;
+$fondo-header: black;
+$color-texto: #260101;
+$color-detalles: #4B61D1;
+$color-bordes: #F2DABD;
+$texto-header: #002fa7;
+$color-cards: #AFDBF5;
+$texto-cards: #318CE7;
+$sombra-cards: 10px 10px 5px $color-fondos;
+$fondo-cards: #E1EBEE;
+
 
 html {
   font-size: 62.5%;
@@ -29,8 +21,8 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  background: var(--bg);
-  color: var(--text);
+  background-color: $color-fondos;
+  color: white;
 }
 
 img {
@@ -39,13 +31,10 @@ img {
   display: block;
 }
 
-/* =========================
-   Header
-========================= */
+/* Header */
 .site-header {
-  background: var(--dark);
-  color: white;
-  padding: 1.6rem 2rem;
+  background-color: $fondo-header;
+    padding: 1.6rem 2rem;
 }
 
 .header-inner {
@@ -57,7 +46,7 @@ img {
   flex-wrap: wrap;
 }
 
-.logo {
+.logo-header {
   width: 72px;
   height: 72px;
   object-fit: contain;
@@ -65,7 +54,7 @@ img {
 
 .brand-title {
   font-size: 2.2rem;
-  color: var(--brand);
+  color: $texto-header;
   letter-spacing: 0.5px;
   margin-right: auto;
 }
@@ -78,7 +67,7 @@ img {
 }
 
 .menu a {
-  color: white;
+  color: $texto-header;
   text-decoration: none;
   padding: 0.6rem 1rem;
   border-radius: 999px;
@@ -86,17 +75,15 @@ img {
 }
 
 .menu a:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background-color: $color-detalles;
 }
 
 .menu a[aria-current="page"] {
-  background: var(--brand);
-  color: white;
+  background-color: $color-fondos;
+  color: $color-detalles;
 }
 
-/* =========================
-   Main layout
-========================= */
+/* Main */
 .container {
   max-width: 1100px;
   margin: 2.4rem auto 4rem;
@@ -107,11 +94,10 @@ img {
 }
 
 .section-card {
-  background: var(--surface);
-  border-radius: var(--radius);
+  background-color: $color-cards;
+  border-radius: $color-detalles;
   padding: 2rem;
-  box-shadow: var(--shadow);
-}
+ }
 
 h1,
 h2,
@@ -129,29 +115,29 @@ h3 {
 }
 
 .lead {
-  color: var(--muted);
+  color: $texto-cards;
   margin-top: 0.8rem;
+  font-weight: bold;
 }
 
 .textosubrayado {
   text-decoration: underline;
   text-underline-offset: 0.4rem;
+  color: $texto-header;
 }
 
 .Textonegro {
-  color: var(--text);
+  color: $texto-header;
 }
 
-/* =========================
-   Scrollers (sin JS)
-========================= */
+/* Scrollers */
 .scroller {
   display: flex;
   gap: 1.2rem;
   overflow-x: auto;
   padding: 1rem 0.4rem 0.6rem;
   scroll-snap-type: x mandatory;
-  border-radius: var(--radius);
+  border-radius: 10px;
 }
 
 .scroller::-webkit-scrollbar {
@@ -159,7 +145,7 @@ h3 {
 }
 
 .scroller::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.18);
+  background-color: $texto-header;
   border-radius: 999px;
 }
 
@@ -168,16 +154,14 @@ h3 {
   width: 170px;
   height: 170px;
   object-fit: contain;
-  background: var(--surface);
+  background-color: $fondo-cards;
   border-radius: 12px;
   padding: 0.8rem;
-  box-shadow: var(--shadow);
+  box-shadow: $sombra-cards;
   scroll-snap-align: start;
 }
 
-/* =========================
-   Ustedes gallery
-========================= */
+/* Ustedes */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -189,12 +173,10 @@ h3 {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  box-shadow: $sombra-cards;
 }
 
-/* =========================
-   Quienes somos layout
-========================= */
+/* Quienes */
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -214,16 +196,14 @@ h3 {
 
 .about-images img {
   border-radius: 12px;
-  box-shadow: var(--shadow);
-  background: var(--surface);
+  box-shadow: $sombra-cards;
+  background-color: $fondo-cards;
   padding: 0.6rem;
   object-fit: contain;
   height: 150px;
 }
 
-/* =========================
-   FAQ
-========================= */
+/* FAQ */
 .faq {
   display: flex;
   flex-direction: column;
@@ -231,9 +211,9 @@ h3 {
 }
 
 .faq-item {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background-color: $color-fondos;
+  border-radius: 15px;
+  box-shadow: $sombra-cards;
   padding: 1rem 1.2rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -247,13 +227,17 @@ h3 {
   margin-top: 0.8rem;
 }
 
-/* =========================
-   Footer
-========================= */
+/* Footer */
 .site-footer {
-  background: var(--dark);
-  color: white;
+  background-color: $color-cards;
+  color: $color-detalles;
   padding: 3rem 2rem 3.6rem;
+}
+
+.logo-footer {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
 }
 
 .footer-inner {
@@ -265,15 +249,15 @@ h3 {
 }
 
 .site-footer h3 {
-  color: var(--brand);
+  color: $color-detalles;
 }
 
 .site-footer p {
-  color: #dbeafe;
+  color: $texto-cards;
 }
 
 .site-footer a {
-  color: white;
+  color: $texto-cards;
   text-decoration: none;
 }
 
@@ -338,17 +322,17 @@ h3 {
   min-width: 200px;
   padding: 0.9rem 1rem;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid $color-bordes;
   outline: none;
 }
 
 .suscripcion input:focus {
-  border-color: var(--brand);
+  border-color: $color-detalles;
 }
 
 .suscripcion button {
-  background: var(--brand);
-  color: white;
+  background-color: $color-fondos;
+  color: $color-bordes;
   border: none;
   padding: 0.9rem 1.2rem;
   border-radius: 10px;
@@ -356,12 +340,10 @@ h3 {
 }
 
 .suscripcion button:hover {
-  background: var(--brand-dark);
+  background-color: $color-fondos;
 }
 
-/* =========================
-   Responsive
-========================= */
+/* Responsive */
 @media (max-width: 900px) {
   .footer-inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
