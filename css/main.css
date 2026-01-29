@@ -101,6 +101,7 @@ h3 {
 }
 
 .lead {
+  font-size: 20px;
   color: #318CE7;
   margin-top: 0.8rem;
   font-weight: bold;
@@ -180,13 +181,11 @@ h3 {
   gap: 1rem;
 }
 
-.about-images img {
-  border-radius: 12px;
-  box-shadow: 10px 10px 10px #7CB9E8;
-  background-color: #E1EBEE;
-  padding: 0.6rem;
+
+.about-images img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
-  height: 150px;
 }
 
 /* FAQ */

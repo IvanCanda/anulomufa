@@ -115,6 +115,7 @@ h3 {
 }
 
 .lead {
+  font-size: 20px;
   color: $texto-cards;
   margin-top: 0.8rem;
   font-weight: bold;
@@ -194,13 +195,10 @@ h3 {
   gap: 1rem;
 }
 
-.about-images img {
-  border-radius: 12px;
-  box-shadow: $sombra-cards;
-  background-color: $fondo-cards;
-  padding: 0.6rem;
+.about-images img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
-  height: 150px;
 }
 
 /* FAQ */
