@@ -1,0 +1,117 @@
+@use "../abstracts" as *;
+
+/* Footer */
+.site-footer {
+  background-color: $color-cards;
+  color: $color-detalles;
+  padding: 3rem 2rem 3.6rem;
+}
+
+.logo-footer {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.4rem;
+}
+
+.site-footer h3 {
+  color: $color-detalles;
+}
+
+.site-footer p {
+  color: $texto-cards;
+}
+
+.site-footer a {
+  color: $texto-cards;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-wide {
+  grid-column: 1 / -1;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.pay-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.pay-icons img,
+.contact-icons img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.map-embed {
+  max-width: 180px;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 150px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.suscripcion {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.suscripcion input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid $color-bordes;
+  outline: none;
+}
+
+.suscripcion input:focus {
+  border-color: $color-detalles;
+}
+
+.suscripcion button {
+  background-color: $color-fondos;
+  color: $color-bordes;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.suscripcion button:hover {
+  background-color: $color-fondos;
+}

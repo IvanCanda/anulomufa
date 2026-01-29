@@ -1,1 +1,10 @@
-@use "variables";
+@use "abstracts";
+@use "base/base";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+@use "layout/responsive";
+@use "components/scroller";
+@use "pages/ustedes";
+@use "pages/quienes-somos";
+@use "pages/faq";

@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+/* FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.faq-item {
+  background-color: $color-fondos;
+  border-radius: 15px;
+  box-shadow: $sombra-cards;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin-top: 0.8rem;
+}

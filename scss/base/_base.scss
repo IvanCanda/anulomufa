@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  background-color: $color-fondos;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 20px;
+  color: $texto-cards;
+  margin-top: 0.8rem;
+  font-weight: bold;
+}
+
+.textosubrayado {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  color: $texto-header;
+}
+
+.Textonegro {
+  color: $texto-header;
+}

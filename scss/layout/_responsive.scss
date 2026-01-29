@@ -1,0 +1,30 @@
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    align-items: flex-start;
+  }
+
+  .brand-title {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
